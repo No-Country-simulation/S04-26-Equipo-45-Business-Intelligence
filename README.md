@@ -18,7 +18,7 @@ Anteriormente, la consolidación de datos fragmentados de nómina (*headcount*),
 
 El proyecto está diseñado bajo una arquitectura desacoplada y escalable, utilizando herramientas líderes en ingeniería de datos y BI:
 
-*   **Orquestación y ETL:** `n8n`https://img.shields.io/badge/n8n-FF6C37?style=for-the-badge&logo=n8n&logoColor=white) – Automatización del flujo de datos mensual y limpieza de registros mediante lógica personalizada en nodos y JavaScript.
+*   **Orquestación y ETL:** `n8n`(https://img.shields.io/badge/n8n-FF6C37?style=for-the-badge&logo=n8n&logoColor=white) – Automatización del flujo de datos mensual y limpieza de registros mediante lógica personalizada en nodos y JavaScript.
 *   **Data Warehouse:** `Supabase (PostgreSQL)` – Base de datos relacional robusta en la nube para el almacenamiento seguro e íntegro del modelo dimensional.
 *   **Visualización y Analítica:** `Power BI Desktop` – Modelado de datos (Esquema en Estrella) y cálculo dinámico de KPIs de Recursos Humanos mediante lenguaje DAX.
 *   **Despliegue y DevOps:** `Docker & Docker Compose` – Contenedorización de todo el ecosistema analítico (n8n, variables de entorno y conectores) desplegado de forma aislada en un **Servidor Privado Virtual (VPS)**.
