@@ -34,3 +34,14 @@ Para facilitar la lectura según el perfil del stakeholder, la documentación se
 * 📄 **Informe Ejecutivo y Propuesta Conceptual**: https://cake-soup-303.notion.site/INFORME-EJECUTIVO-Y-PROPUESTA-CONCEPTUAL-36c811cc04aa80ac99bcc7c281e4494a - Diseñado para Directores de Operaciones y Client Managers. Incluye el análisis de mercado y prototipos visuales
 * ⚙️ **Arquitectura de Datos y Modelo Dimensional**: https://cake-soup-303.notion.site/DOCUMENTACI-N-T-CNICA-Y-ARQUITECTURA-DEL-MODELO-DE-DATOS-36c811cc04aa8032b457c911747eb3a3 - Detalle técnico del esquema en estrella, diccionario de datos en Supabase y fórmulas DAX.
 * 📖 **Manual de Operación del Sistema***: https://cake-soup-303.notion.site/MANUAL-DE-USUARIO-Y-OPERACI-N-DEL-SISTEMA-36c811cc04aa80c0a15ee11176ab58cf - Guía paso a paso para el analista encargado de ejecutar el pipeline mensual en n8n.
+
+* ## 📂 Estructura del Repositorio
+
+```text
+├── etl_workflows/
+│   └── pipeline_workforce.json  # Workflow exportado de n8n listo para producción
+├── sql_scripts/
+│   └── create_tables.sql        # Scripts DDL para la estructura de tablas en Supabase
+├── powerbi_model/
+│   └── GlobalForce_Dashboard.pbix # Archivo del reporte de Power BI con el modelo y DAX
+└── README.md                    # Presentación del proyecto
