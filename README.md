@@ -45,3 +45,18 @@ Para facilitar la lectura según el perfil del stakeholder, la documentación se
 ├── powerbi_model/
 │   └── GlobalForce_Dashboard.pbix # Archivo del reporte de Power BI con el modelo y DAX
 └── README.md                    # Presentación del proyecto
+
+## 👥 Equipo Desarrollador (Equipo 45)
+
+Este proyecto fue desarrollado de forma colaborativa por:
+
+*   **Sandra Castaño** – Data Amalyst & Business Intelligence Analyst. (Medellín, Colombia) | [LinkedIn](TU_ENLACE_A_LINKEDIN)
+    *   **Contribución:** Modelado semántico de datos, creación de los dashboards interactivos en Power BI y redacción de toda la documentación técnica y operativa en Notion.
+
+*   **Lucas Alamanni** – Data Engineer.
+    *   **Contribución:** Simulación de datos, codificación de scripts estructurales en la base de datos (Supabase/PostgreSQL) y co-diseño del flujo y la lógica de automatización ETL en n8n.
+    *   [LinkedIn]
+
+*   **francisco Zuñiga** – Data Engineer.
+    *   **Contribución:** Co-diseño y estructuración del flujo de automatización en n8n, configuración de la lógica de los nodos del pipeline y soporte en la integración de la infraestructura del sistema.
+    *   [LinkedIn]
