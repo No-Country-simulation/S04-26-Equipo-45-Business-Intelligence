@@ -21,7 +21,8 @@ El proyecto está diseñado bajo una arquitectura desacoplada y escalable, utili
 *   **Orquestación y ETL:**Automatización del flujo de datos mensual y limpieza de registros mediante lógica personalizada en nodos y JavaScript.
 *   ![n8n](https://img.shields.io/badge/n8n-FF6C37?style=for-the-badge&logo=n8n&logoColor=white) :  
 *   **Almacenamiento & Data Warehouse:** Base de datos relacional robusta en la nube para el almacenamiento seguro e íntegro del modelo dimensional.
-*  ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) [PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)  
+*  ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+*  [PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)  
 *   **Visualización y Analítica:** Modelado de datos (Esquema en Estrella) y cálculo dinámico de KPIs de Recursos Humanos mediante lenguaje DAX.
 *   ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black)
 *   **Despliegue y DevOps:** Contenedorización de todo el ecosistema analítico (n8n, variables de entorno y conectores) desplegado de forma aislada en un **Servidor Privado Virtual (VPS)**.
