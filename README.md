@@ -53,11 +53,11 @@ Para facilitar la lectura según el perfil del stakeholder, la documentación se
 
 Este proyecto fue desarrollado de forma colaborativa por:
 
-*   **Sandra Castaño** – Data Amalyst & Business Intelligence Analyst. (Medellín, Colombia) 
-    *   **Contribución:** Modelado semántico de datos, creación del dashboard interactivo en Power BI y Estructuracipon de la documentación técnica y operativa en Notion.
-
 *   **Lucas Alamanni** – Data Engineer.
     *   **Contribución:** Simulación de datos, codificación de scripts estructurales en la base de datos (Supabase/PostgreSQL) y co-diseño del flujo y la lógica de automatización ETL en n8n.
+
+*   **Sandra Castaño** – Data Amalyst & Business Intelligence Analyst. (Medellín, Colombia) 
+    *   **Contribución:** Modelado semántico de datos, creación del dashboard interactivo en Power BI y Estructuracipon de la documentación técnica y operativa en Notion.
 
 *   **francisco Zuñiga** – Data Engineer.
     *   **Contribución:** Co-diseño y estructuración del flujo de automatización en n8n, configuración de la lógica de los nodos del pipeline y soporte en la integración de la infraestructura del sistema.
