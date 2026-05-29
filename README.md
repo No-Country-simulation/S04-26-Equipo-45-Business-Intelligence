@@ -35,18 +35,15 @@ Para facilitar la lectura según el perfil del stakeholder, la documentación se
 * ⚙️ **Arquitectura de Datos y Modelo Dimensional**: https://cake-soup-303.notion.site/DOCUMENTACI-N-T-CNICA-Y-ARQUITECTURA-DEL-MODELO-DE-DATOS-36c811cc04aa8032b457c911747eb3a3 - Detalle técnico del esquema en estrella, diccionario de datos en Supabase y fórmulas DAX.
 * 📖 **Manual de Operación del Sistema***: https://cake-soup-303.notion.site/MANUAL-DE-USUARIO-Y-OPERACI-N-DEL-SISTEMA-36c811cc04aa80c0a15ee11176ab58cf - Guía paso a paso para el analista encargado de ejecutar el pipeline mensual en n8n.
 
-* ## 📂 Estructura del Repositorio
+## 🛠️ Estructura del Repositorio
 
-```text
-├── etl_workflows/
-│   └── pipeline_workforce.json  # Workflow exportado de n8n listo para producción
-├── sql_scripts/
-│   └── create_tables.sql        # Scripts DDL para la estructura de tablas en Supabase
-├── powerbi_model/
-│   └── Repote GlobalForce_MVP.pbix # Archivo del reporte de Power BI con el modelo y DAX
-└── README.md                    # Presentación del proyecto
-└── Capturas_Dashboard           # Imágenes del dashboard
-└── Bases de datos               # Imágenes del dashboard
+El proyecto se encuentra organizado de la siguiente manera para facilitar su comprensión, auditoría y despliegue:
+
+*   **📂 databases/raw_data/**: Contiene los archivos históricos en formato CSV con los registros crudos utilizados para las pruebas del sistema.
+*   **📂 etl_workflows/**: Incluye el archivo `pipeline_workforce.json` con la configuración y lógica completa del flujo automatizado en n8n.
+*   **📂 sql_scripts/**: Contiene el script `create_tables.sql` con la estructura técnica y tipos de datos configurados en la base de datos de Supabase.
+*   **📂 powerbi_model/**: Alberga el archivo `.pbix` de Power BI, donde se desarrolló el modelo de datos en estrella, las métricas calculadas en DAX y el diseño del tablero interactivo.
+*   **📂 dashboard_captures/**: Capturas de pantalla de la interfaz final para una visualización rápida del reporte ejecutivo sin necesidad de abrir Power BI.
 
 
 ## 👥 Equipo Desarrollador (Equipo 45)
