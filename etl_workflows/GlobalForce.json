@@ -1,0 +1,765 @@
+{
+  "name": "GlobalForce",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{$json[\"id\"]}}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -752,
+        -272
+      ],
+      "id": "82506425-c4d9-412f-8acf-7fbc49519145",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -560,
+        -272
+      ],
+      "id": "e6809418-fd82-4ffc-9458-f7fadf00dd8c",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "tableId": "departments_stagging",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "department_id",
+              "fieldValue": "={{$json[\"department_id\"]}}"
+            },
+            {
+              "fieldId": "department_name",
+              "fieldValue": "={{$json[\"department_name\"]}}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        -272
+      ],
+      "id": "e202d768-efba-40f5-9165-ea384f2a4491",
+      "name": "Create a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "1dACnoaaWUtTzXPn",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1yHjx2EEU2xIsHucr16rdygmC_b6Sbvbu",
+          "mode": "list",
+          "cachedResultName": "departments",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1yHjx2EEU2xIsHucr16rdygmC_b6Sbvbu"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -976,
+        -272
+      ],
+      "id": "0821f8c6-4208-48ee-808a-d4de0b8aad5f",
+      "name": "Departments Drive Trigger",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{$json[\"id\"]}}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -752,
+        -64
+      ],
+      "id": "d2f6597c-19a4-442a-8eaf-52820cc4ee7a",
+      "name": "Download file1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -576,
+        -64
+      ],
+      "id": "23528af7-c5eb-422d-98fe-89f81e0118da",
+      "name": "Extract from File1"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1BKKDP1GtmOC7TjDjetNjpc3eT1I1dFfJ",
+          "mode": "list",
+          "cachedResultName": "employees",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1BKKDP1GtmOC7TjDjetNjpc3eT1I1dFfJ"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -976,
+        -64
+      ],
+      "id": "4d80e192-9066-4def-9a22-4bfe28f6fc73",
+      "name": "Employees Drive Trigger",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "employees_staging",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "employee_id",
+              "fieldValue": "={{$json.employee_id}}"
+            },
+            {
+              "fieldId": "first_name",
+              "fieldValue": "={{$json.first_name}}"
+            },
+            {
+              "fieldId": "last_name",
+              "fieldValue": "={{$json.last_name}}"
+            },
+            {
+              "fieldId": "hire_date",
+              "fieldValue": "={{$json.hire_date}}"
+            },
+            {
+              "fieldId": "region_id",
+              "fieldValue": "={{ $json.region_id }}"
+            },
+            {
+              "fieldId": "department_id",
+              "fieldValue": "={{ $json.department_id }}"
+            },
+            {
+              "fieldId": "=termination_date",
+              "fieldValue": "={{$json.termination_date || null}}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        -64
+      ],
+      "id": "d9c2a106-7c4f-4571-af24-7cadf6beb188",
+      "name": "Create a row1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "1dACnoaaWUtTzXPn",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1XpUp33-ZE_eFzTY9U4lrTAX_WZgie1Qu",
+          "mode": "list",
+          "cachedResultName": "work_hours",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1XpUp33-ZE_eFzTY9U4lrTAX_WZgie1Qu"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -976,
+        144
+      ],
+      "id": "8e7d48db-53fd-4d0f-9aab-61f0ca814174",
+      "name": "Work_hours_trigger",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{$json[\"id\"]}}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -752,
+        144
+      ],
+      "id": "89a37d64-86a8-4f7b-a96a-9f34284c6c64",
+      "name": "Download file2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -544,
+        144
+      ],
+      "id": "3782889c-3488-4c14-9fd9-ee8e4c344e6b",
+      "name": "Extract from File2"
+    },
+    {
+      "parameters": {
+        "tableId": "work_hours_staging",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "record_id",
+              "fieldValue": "={{$json.record_id}}"
+            },
+            {
+              "fieldId": "employee_id",
+              "fieldValue": "={{$json.employee_id}}"
+            },
+            {
+              "fieldId": "month",
+              "fieldValue": "={{$json.month}}"
+            },
+            {
+              "fieldId": "hours_worked",
+              "fieldValue": "={{$json.hours_worked}}"
+            },
+            {
+              "fieldId": "available_hours",
+              "fieldValue": "={{$json.available_hours}}"
+            },
+            {
+              "fieldId": "overtime_hours",
+              "fieldValue": "={{$json.overtime_hours}}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -336,
+        144
+      ],
+      "id": "ea67cd66-55f5-471e-80cd-41adbc255506",
+      "name": "Create a row2",
+      "credentials": {
+        "supabaseApi": {
+          "id": "1dACnoaaWUtTzXPn",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1qXM9G0uARQ27CGE-g8XqhjsG-901jiCA",
+          "mode": "list",
+          "cachedResultName": "workforce_cost",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1qXM9G0uARQ27CGE-g8XqhjsG-901jiCA"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -976,
+        368
+      ],
+      "id": "797ea8e2-b80d-4d86-9fb6-687269a665c0",
+      "name": "Work foce trigger",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{$json[\"id\"]}}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -768,
+        368
+      ],
+      "id": "d040a6ae-25a0-4d56-806c-09a1e6a83e50",
+      "name": "Download file3",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -528,
+        368
+      ],
+      "id": "94b95299-1608-427e-ace7-da926b1c2400",
+      "name": "Extract from File3"
+    },
+    {
+      "parameters": {
+        "tableId": "workforce_costs_staging",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "cost_id",
+              "fieldValue": "={{$json.cost_id}}"
+            },
+            {
+              "fieldId": "employee_id",
+              "fieldValue": "={{$json.employee_id}}"
+            },
+            {
+              "fieldId": "month",
+              "fieldValue": "={{$json.month}}"
+            },
+            {
+              "fieldId": "salary_cost",
+              "fieldValue": "={{$json.salary_cost}}"
+            },
+            {
+              "fieldId": "benefits_cost",
+              "fieldValue": "={{$json.benefits_cost}}"
+            },
+            {
+              "fieldId": "operational_cost",
+              "fieldValue": "={{$json.operational_cost}}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        368
+      ],
+      "id": "f85ad03a-276a-4c34-a409-b654567e1226",
+      "name": "Create a row3",
+      "credentials": {
+        "supabaseApi": {
+          "id": "1dACnoaaWUtTzXPn",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{$json[\"id\"]}}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -784,
+        576
+      ],
+      "id": "d95d421c-c476-4a19-bc09-934dfa233a5e",
+      "name": "Download file4",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -528,
+        576
+      ],
+      "id": "4d0be9ef-6ed8-469a-80dd-85e64a098cd4",
+      "name": "Extract from File4"
+    },
+    {
+      "parameters": {
+        "tableId": "regions_stagging",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "region_id",
+              "fieldValue": "={{$json.region_id}}"
+            },
+            {
+              "fieldId": "region_name",
+              "fieldValue": "={{$json.region_name}}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -304,
+        560
+      ],
+      "id": "66595190-4205-4861-bb2a-d49e25396f5a",
+      "name": "Create a row4",
+      "credentials": {
+        "supabaseApi": {
+          "id": "1dACnoaaWUtTzXPn",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1roL9DVsAKX-HW8EbaZkxE4Ar-QdrizP7",
+          "mode": "list",
+          "cachedResultName": "regions",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1roL9DVsAKX-HW8EbaZkxE4Ar-QdrizP7"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -976,
+        560
+      ],
+      "id": "b27c6ee7-da8c-49b3-922a-b527c91b37d3",
+      "name": "Region trigger",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "uCaGLKhqOOrtCt1Y",
+          "name": "Google Drive account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Create a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Departments Drive Trigger": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File1": {
+      "main": [
+        [
+          {
+            "node": "Create a row1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Employees Drive Trigger": {
+      "main": [
+        [
+          {
+            "node": "Download file1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Work_hours_trigger": {
+      "main": [
+        [
+          {
+            "node": "Download file2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file2": {
+      "main": [
+        [
+          {
+            "node": "Extract from File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row1": {
+      "main": [
+        []
+      ]
+    },
+    "Extract from File2": {
+      "main": [
+        [
+          {
+            "node": "Create a row2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Work foce trigger": {
+      "main": [
+        [
+          {
+            "node": "Download file3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file3": {
+      "main": [
+        [
+          {
+            "node": "Extract from File3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File3": {
+      "main": [
+        [
+          {
+            "node": "Create a row3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file4": {
+      "main": [
+        [
+          {
+            "node": "Extract from File4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File4": {
+      "main": [
+        [
+          {
+            "node": "Create a row4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Region trigger": {
+      "main": [
+        [
+          {
+            "node": "Download file4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "4652cc22-3e63-47de-b6f9-df5613413e85",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e17c4aaadcdbe0b1a5a200b6146b9a39c529ae6f81e17825d0fc95fc43cb853c"
+  },
+  "id": "vSujWRPU0R3s1vjd",
+  "tags": []
+}
