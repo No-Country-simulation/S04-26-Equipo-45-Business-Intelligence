@@ -53,7 +53,7 @@ Este proyecto fue desarrollado de forma colaborativa por:
 *   **Lucas Alamanni** – Data Engineer.
     *   **Contribución:** Simulación de datos, codificación de scripts estructurales en la base de datos (Supabase/PostgreSQL) y co-diseño del flujo y la lógica de automatización ETL en n8n.
 
-*   **Sandra Castaño** – Data Amalyst & Business Intelligence Analyst. (Medellín, Colombia) 
+*   **Sandra Castaño** – Data Analyst & Business Intelligence Analyst. (Medellín, Colombia) 
     *   **Contribución:** Modelado semántico de datos, creación del dashboard interactivo en Power BI y Estructuracipon de la documentación técnica y operativa en Notion.
 
 *   **francisco Zuñiga** – Data Engineer.
